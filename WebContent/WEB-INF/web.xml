@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>rec</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+   <!-- DBCPConn -->
+  
+   <resource-ref>
+  	<description>Oracle Database Source</description>
+  	<res-ref-name>jdbc/myOracle</res-ref-name>
+  	<res-type>javax.sql.DataSource</res-type>
+  	<res-auth>Container</res-auth>
+  </resource-ref>
+ 
+   <!-- servlet mapping -->
+ 
+   <servlet>
+  	<servlet-name>MainServlet</servlet-name>
+  	<servlet-class>com.Controller.MainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MainServlet</servlet-name>
+  	<url-pattern>/escm/*</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+  	<servlet-name>CustomServlet</servlet-name>
+  	<servlet-class>com.Controller.CustomServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CustomServlet</servlet-name>
+  	<url-pattern>/escc/*</url-pattern>
+  </servlet-mapping>  	
+
+  <servlet>
+  	<servlet-name>PostServlet</servlet-name>
+  	<servlet-class>com.Controller.PostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>PostServlet</servlet-name>
+  	<url-pattern>/escp/*</url-pattern>
+  </servlet-mapping>  	
+     	
+  <servlet>
+  	<servlet-name>BookServlet</servlet-name>
+  	<servlet-class>com.Controller.BookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>BookServlet</servlet-name>
+  	<url-pattern>/escb/*</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+  	<servlet-name>ThemaServlet</servlet-name>
+  	<servlet-class>com.Controller.ThemaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ThemaServlet</servlet-name>
+  	<url-pattern>/esct/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ReviewServlet</servlet-name>
+  	<servlet-class>com.Controller.ReviewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ReviewServlet</servlet-name>
+  	<url-pattern>/escr/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+</web-app>
